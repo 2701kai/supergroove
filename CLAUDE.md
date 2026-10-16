@@ -1,6 +1,7 @@
-# Claude instructions
+# Agent instructions
 
-## Git commits
-- Author and commit as `2701kai <55494133+2701kai@users.noreply.github.com>`, never as Claude.
-- Never add a `Co-Authored-By: Claude` trailer (or any Co-Authored-By line naming Claude) to commit messages.
-- Never add a `Claude-Session:` trailer or claude.ai session link to commits or pull requests.
+## Git commits and pull requests
+- Author and commit as `2701kai <55494133+2701kai@users.noreply.github.com>`, never under an AI tool's name.
+- No AI attribution anywhere: no `Co-Authored-By` trailers naming an AI tool, no session links or session trailers, no "Generated with" lines in commit messages, pull request titles or descriptions.
+- Branch names, commit messages and pull request text must not name the AI tool.
+- If a tool appends an attribution footer to a pull request description anyway, edit the description afterwards to remove it.
