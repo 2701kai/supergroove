@@ -1,0 +1,9 @@
+{
+  "name": "supergroove",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SUPERGROOVE 2.0 · Ronald Reloaded · 3 April 2027",
+  "scripts": {
+    "check": "node --check dist/app.js && python3 scripts/check-site.py"
+  }
+}
