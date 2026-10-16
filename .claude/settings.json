@@ -1,6 +1,7 @@
 {
   "attribution": {
-    "commit": ""
+    "commit": "",
+    "sessionUrl": false
   },
   "env": {
     "GIT_AUTHOR_NAME": "2701kai",
