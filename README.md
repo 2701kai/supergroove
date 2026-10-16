@@ -30,7 +30,7 @@ The animation starts muted and respects reduced-motion preferences. Playback and
 
 ## Hosting
 
-The `.openai/hosting.json` manifest declares the private preview Site. The same `dist/` folder can be deployed to another static host without changes. If the public origin changes, update the absolute `og:image` URL in `index.html`.
+Production: https://supergroove.vercel.app (Vercel project `supergroove`, serving `dist/`, deployed from `main`). The `.openai/hosting.json` manifest declares the private ChatGPT preview Site. The same `dist/` folder can be deployed to another static host without changes. If the public origin changes, update the absolute `og:image` URL in `index.html`.
 
 ## Assets
 
