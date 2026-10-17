@@ -58,9 +58,10 @@ def check_page(directory):
 
 
 counts = {"/" + directory.relative_to(root).as_posix().strip("."): check_page(directory)
-          for directory in (root, root / "draft-one")}
-draft = (root / "draft-one" / "index.html").read_text()
-assert '<meta name="robots" content="noindex">' in draft, "Archived draft should stay out of search results"
+          for directory in (root, root / "one", root / "two")}
+for version in ("one", "two"):
+    html = (root / version / "index.html").read_text()
+    assert '<meta name="robots" content="noindex">' in html, f"/{version} should stay out of search results; / is the indexed page"
 
 raw = (root / "supergroove-2027.ics").read_bytes()
 assert b"\r\n" in raw and not re.search(rb"(?<!\r)\n", raw), "Calendar needs CRLF"

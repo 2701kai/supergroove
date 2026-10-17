@@ -4,6 +4,6 @@
   "private": true,
   "description": "SUPERGROOVE 2.0 · Ronald Reloaded · 3 April 2027",
   "scripts": {
-    "check": "node --check dist/app.js && node --check dist/draft-one/app.js && python3 scripts/check-site.py"
+    "check": "node --check dist/app.js && node --check dist/one/app.js && node --check dist/two/app.js && python3 scripts/check-site.py"
   }
 }
