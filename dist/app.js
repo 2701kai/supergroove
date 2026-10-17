@@ -457,7 +457,7 @@ document.querySelector('#share-flyer').addEventListener('click', async event => 
       const file = new File([await response.blob()], 'SUPERGROOVE-2.0-Flyer.jpg', { type: 'image/jpeg' });
       const data = {
         files: [file], title: 'SUPERGROOVE 2.0 · Ronald Reloaded',
-        text: '03.04.2027 · Festa de Samba · Workshop mit Toby von Badaue Paris. Mehr Groove. Mehr Bum. Mehr Herz!'
+        text: '03.04.2027 · Festa de Samba · Workshop mit Toby „Tamandua“ Russell von Badauê Paris. Mehr Groove. Mehr Bum. Mehr Herz!'
       };
       if (navigator.canShare({ files: [file] })) {
         await navigator.share(data);

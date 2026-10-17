@@ -115,7 +115,7 @@ setInterval(updateCountdown, 60000);
 document.querySelector('#share-event').addEventListener('click', async event => {
   const button = event.currentTarget;
   const url = new URL('/three/', window.location.href).href;
-  const data = { title: 'SUPERGROOVE 2027 · Ein Rhythmus. Viele Herzen.', text: 'Am 3. April 2027 wird zusammen gegroovt! Ronald Reloaded, Festa de Samba & Workshop mit Toby von Badaue Paris. Kommst du mit?', url };
+  const data = { title: 'SUPERGROOVE 2027 · Ein Rhythmus. Viele Herzen.', text: 'Am 3. April 2027 wird zusammen gegroovt! Ronald Reloaded, Festa de Samba & Workshop mit Toby „Tamandua“ Russell von Badauê Paris. Kommst du mit?', url };
   button.disabled = true;
   try {
     if (navigator.share) await navigator.share(data);

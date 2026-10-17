@@ -77,7 +77,7 @@ counts = {"/" + directory.relative_to(root).as_posix().strip("."): check_page(di
           for directory in (root, *versions)}
 for version in versions:
     if version.name == "draft-one":
-        continue  # Exact historical snapshot, including original metadata.
+        continue  # Historical snapshot that keeps its original metadata.
     assert NOINDEX in (version / "index.html").read_text(), f"/{version.name} should stay out of search results; / is the indexed page"
 root_files = {name: (root / name).read_text() for name in PAGE_FILES}
 live = [version.name for version in versions if as_root_page(version) == root_files]

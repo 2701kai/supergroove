@@ -12,4 +12,4 @@ A joyful samba gathering with community and generosity at its heart. Landscape i
 
 The artwork is delivered as WebP and presented as illustration, not documentation of the future event.
 
-Event facts are limited to the organizer's announcement: 3 April 2027, Ronald Reloaded, Festa de Samba and a workshop with Toby from Badaue Paris. Venue, times, registration and further line-up remain pending.
+Event facts are limited to the organizer's announcement: 3 April 2027, Ronald Reloaded, Festa de Samba and a workshop with Toby „Tamandua“ Russell from Badauê Paris. Venue, times, registration and further line-up remain pending.
