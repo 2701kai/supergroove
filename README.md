@@ -11,8 +11,9 @@ The complete, dependency-free website is in `dist/`. Each version is self-contai
 | `/` | `dist/` | Live page, currently version two |
 | `/one` | `dist/one/` | Version one: the first save-the-date page |
 | `/two` | `dist/two/` | Version two: the 2027 redesign |
+| `/three` | `dist/three/` | Version three: draft in the colours of the Rio illustration, with React Bits-style effects |
 
-`/one` and `/two` use root-relative paths (`/assets/...`, `/two/styles.css`), so they render the same with or without a trailing slash, and they carry `noindex` so search engines only list `/`. To put a version live, copy its three files into `dist/`, switch the paths back to relative ones (`assets/...`, `styles.css`, `app.js`, `supergroove-2027.ics`) and remove the `noindex` line.
+The version folders use root-relative paths (`/assets/...`, `/two/styles.css`), so they render the same with or without a trailing slash, and they carry `noindex` so search engines only list `/`. To put a version live, copy its three files into `dist/`, switch the paths back to relative ones (`assets/...`, `styles.css`, `app.js`, `supergroove-2027.ics`) and remove the `noindex` line.
 
 Version one (`/one`):
 
@@ -25,6 +26,12 @@ Version two (`/` and `/two`):
 - `index.html`: hero with kinetic type, Rio sunset scene (Sugarloaf, Corcovado, Copacabana promenade), "O Coração" with the values and the charitable idea, workshop, Batucada drum pads, save-the-date with live countdown, flyer sharing
 - `styles.css`: Brazil palette (green, yellow, blue, carnival pink), aurora and confetti hero, scroll reveals; locally hosted fonts
 - `app.js`: everything from version one plus scroll reveals, a Berlin-time countdown to the second and a small samba drum machine (surdo, caixa, tamborim, agogô, chocalho) synthesised live with the Web Audio API
+
+Version three (`/three`):
+
+- `index.html`: the same content as version two, with Ronald looking into the camera on the flyer, the Rio illustration in the Brazil section, a drum section where Ronald's video plays along with the bateria, and a draggable picture stack
+- `styles.css`: palette taken from the Rio illustration (sunset paper, sun orange, heliconia red, jungle greens, the turquoise bay) with a paper-grain overlay; locally hosted fonts
+- `app.js`: plain-JavaScript versions of React Bits effects (reactbits.dev): Split Text, Rotating Text, Shiny Text, Blur Text, Scroll Reveal, Curved Loop, Scroll Velocity, Circular Text, Tilted Card with Glare Hover, Magnet, Star Border, Click Spark, Noise, Spotlight Card, Counter, Elastic Slider, Stack and a Grainient-style WebGL background. No React or other library is loaded. Plus the drum machine from version two with a tempo slider
 
 Shared:
 
@@ -47,7 +54,7 @@ In version two, the "Groove, der Gutes tut" card describes the charitable spirit
 
 ## Accessibility and privacy
 
-The animation starts muted and respects reduced-motion preferences, and text remains available outside the video. In version two, reduced motion also switches off all CSS and SVG animation, confetti and scroll effects while every piece of content stays visible; every drum pad has a labelled control and also responds to the keys 1 to 4; drum sounds only start after a tap, click or key press and stop when the page is hidden or the video sound is switched on. Fonts and all media are local and the drum sounds are generated in the browser; no analytics, advertising scripts or third-party embeds are used.
+The animation starts muted and respects reduced-motion preferences, and text remains available outside the video. In version two, reduced motion also switches off all CSS and SVG animation, confetti and scroll effects while every piece of content stays visible; every drum pad has a labelled control and also responds to the keys 1 to 4; drum sounds only start after a tap, click or key press and stop when the page is hidden or the video sound is switched on. Version three follows the same rules: with reduced motion every effect stands still (the WebGL background shows a single frame and Ronald's video does not play), and without JavaScript all content stays visible. Fonts and all media are local and the drum sounds are generated in the browser; no analytics, advertising scripts or third-party embeds are used.
 
 ## Hosting
 
@@ -55,4 +62,4 @@ Production: https://supergroove.vercel.app (Vercel project `supergroove`, servin
 
 ## Assets
 
-Event artwork and animation supplied for this project. Nimbus Sans fonts are from URW Base35, distributed under the GNU AGPL v3 with the font embedding exception. See `dist/assets/FONT-LICENSE.txt`.
+Event artwork, the Rio illustration and the animation supplied for this project; `ronald-eyes-open.webp` is the animation's first frame. The effects in version three are modelled on React Bits (reactbits.dev, MIT + Commons Clause) and written from scratch in plain JavaScript. Nimbus Sans fonts are from URW Base35, distributed under the GNU AGPL v3 with the font embedding exception. See `dist/assets/FONT-LICENSE.txt`.
