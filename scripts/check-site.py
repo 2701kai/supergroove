@@ -57,11 +57,28 @@ def check_page(directory):
     return len(page.ids)
 
 
+PAGE_FILES = ("index.html", "styles.css", "app.js")
+NOINDEX = '  <meta name="robots" content="noindex">\n'
+
+
+def as_root_page(directory):
+    """A version's files with its root-relative paths turned back into the root page's relative ones."""
+    files = {}
+    for name in PAGE_FILES:
+        text = (directory / name).read_text().replace(NOINDEX, "").replace(f"/{directory.name}/", "")
+        text = text.replace('"/assets/', '"assets/').replace("'/assets/", "'assets/")
+        files[name] = text.replace('"/supergroove-2027.ics"', '"supergroove-2027.ics"')
+    return files
+
+
+versions = [directory for directory in sorted(root.iterdir()) if (directory / "index.html").is_file()]
 counts = {"/" + directory.relative_to(root).as_posix().strip("."): check_page(directory)
-          for directory in (root, root / "one", root / "two")}
-for version in ("one", "two"):
-    html = (root / version / "index.html").read_text()
-    assert '<meta name="robots" content="noindex">' in html, f"/{version} should stay out of search results; / is the indexed page"
+          for directory in (root, *versions)}
+for version in versions:
+    assert NOINDEX in (version / "index.html").read_text(), f"/{version.name} should stay out of search results; / is the indexed page"
+root_files = {name: (root / name).read_text() for name in PAGE_FILES}
+live = [version.name for version in versions if as_root_page(version) == root_files]
+assert live, "dist/ must be an exact copy of one version folder, with relative paths and without noindex"
 
 raw = (root / "supergroove-2027.ics").read_bytes()
 assert b"\r\n" in raw and not re.search(rb"(?<!\r)\n", raw), "Calendar needs CRLF"
@@ -76,4 +93,4 @@ assert "TRANSP:TRANSPARENT" in calendar, "Save-the-date should not block the ent
 assert "Location folgen" in calendar and "Uhrzeiten" in calendar
 
 summary = ", ".join(f"{name} ({count} IDs)" for name, count in counts.items())
-print(f"PASS: {summary}; local assets, navigation, JS targets, calendar dates and folding.")
+print(f"PASS: {summary}; / serves /{live[0]}; local assets, navigation, JS targets, calendar dates and folding.")

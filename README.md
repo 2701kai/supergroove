@@ -8,19 +8,19 @@ The complete, dependency-free website is in `dist/`. Each version is self-contai
 
 | Route | Folder | Content |
 |---|---|---|
-| `/` | `dist/` | Live page, currently version one |
+| `/` | `dist/` | Live page, currently version two |
 | `/one` | `dist/one/` | Version one: the first save-the-date page |
 | `/two` | `dist/two/` | Version two: the 2027 redesign |
 
 `/one` and `/two` use root-relative paths (`/assets/...`, `/two/styles.css`), so they render the same with or without a trailing slash, and they carry `noindex` so search engines only list `/`. To put a version live, copy its three files into `dist/`, switch the paths back to relative ones (`assets/...`, `styles.css`, `app.js`, `supergroove-2027.ics`) and remove the `noindex` line.
 
-Version one (`/` and `/one`):
+Version one (`/one`):
 
 - `index.html`: German event content and accessible semantic markup
 - `styles.css`: responsive green, yellow and coral festival design; locally hosted fonts
 - `app.js`: video playback and sound controls, Berlin-date countdown, native flyer sharing with download fallback
 
-Version two (`/two`):
+Version two (`/` and `/two`):
 
 - `index.html`: hero with kinetic type, Rio sunset scene (Sugarloaf, Corcovado, Copacabana promenade), "O Coração" with the values and the charitable idea, workshop, Batucada drum pads, save-the-date with live countdown, flyer sharing
 - `styles.css`: Brazil palette (green, yellow, blue, carnival pink), aurora and confetti hero, scroll reveals; locally hosted fonts
@@ -35,7 +35,7 @@ Serve `dist/` with any static host. No build or package installation is required
 
 ## Checks
 
-Run `npm run check`. Checks JavaScript syntax, required local assets (HTML, CSS and JavaScript references), navigation targets and JavaScript element IDs for `/`, `/one` and `/two`, that both versions stay `noindex`, and the calendar dates. Python 3 and Node.js are sufficient. Browser visual QA should additionally be performed before a public launch.
+Run `npm run check`. Checks JavaScript syntax, required local assets (HTML, CSS and JavaScript references), navigation targets and JavaScript element IDs for `/` and every version folder, that the versions stay `noindex`, that `/` is an exact copy of one version (and which one), and the calendar dates. Python 3 and Node.js are sufficient. Browser visual QA should additionally be performed before a public launch.
 
 ## Content status
 
