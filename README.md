@@ -13,6 +13,7 @@ The complete, dependency-free website is in `dist/`. Each version is self-contai
 | `/two` | `dist/two/` | Version two: the 2027 redesign |
 | `/three` | `dist/three/` | Illustrated Brazil direction: Ein Rhythmus. Viele Herzen. |
 | `/four` | `dist/four/` | Version four: draft in the colours of the Rio illustration, with React Bits-style effects |
+| `/five` | `dist/five/` | Version five: version four with Ronald's corrections |
 | `/draft-one/` | `dist/draft-one/` | Exact original snapshot, with independent assets |
 
 The version folders use root-relative paths (`/assets/...`, `/two/styles.css`), so they render the same with or without a trailing slash, and they carry `noindex` so search engines only list `/`. To put a version live, copy its three files into `dist/`, switch the paths back to relative ones (`assets/...`, `styles.css`, `app.js`, `supergroove-2027.ics`) and remove the `noindex` line.
@@ -34,6 +35,11 @@ Version four (`/four`):
 - `index.html`: the same content as version two, with Ronald looking into the camera on the flyer, the Rio illustration in the Brazil section, a drum section where Ronald's video plays along with the bateria, and a draggable picture stack
 - `styles.css`: palette taken from the Rio illustration (sunset paper, sun orange, heliconia red, jungle greens, the turquoise bay) with a paper-grain overlay; locally hosted fonts
 - `app.js`: plain-JavaScript versions of React Bits effects (reactbits.dev): Split Text, Rotating Text, Shiny Text, Blur Text, Scroll Reveal, Curved Loop, Scroll Velocity, Circular Text, Tilted Card with Glare Hover, Magnet, Star Border, Click Spark, Noise, Spotlight Card, Counter, Elastic Slider, Stack and a Grainient-style WebGL background. No React or other library is loaded. Plus the drum machine from version two with a tempo slider
+
+Version five (`/five`), version four with Ronald's corrections:
+
+- Toby is named in full as Toby „Tamandua“ Russell, founder of the batucada Badauê in Paris (spelled with ê); the workshop heading reads „Workshop mit Toby „Tamandua“.“
+- Ronald plays the Repi (repinique): the hero says „Ronald an der Repi“, a featured Repi pad joins the drum section (keys 1 to 5), clicking Ronald's flyer plays it, and every bateria start opens with a two-bar Repi chamada that calls the band in
 
 Shared:
 
