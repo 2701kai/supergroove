@@ -5,12 +5,14 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:7a279eef-a310-4b20-9569-b6aac55db115@supergroove
-DTSTAMP:20261016T113000Z
+DTSTAMP:20261017T143307Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270403
 DTEND;VALUE=DATE:20270404
 SUMMARY:SUPERGROOVE 2.0 - Ronald Reloaded
-DESCRIPTION:Festa de Samba. Workshop mit Toby von Badaue Paris.\nGanztäg
- iger Save-the-Date-Platzhalter. Uhrzeiten und Location folgen.
+DESCRIPTION:Festa de Samba. Workshop mit Toby „Tamandua“ Russell von Ba
+ dauê Paris.\nGanztägiger Save-the-Date-Platzhalter. Uhrzeiten und Locati
+ on folgen.
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR

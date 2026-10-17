@@ -54,7 +54,9 @@ Run `npm run check`. Checks JavaScript syntax, required local assets (HTML, CSS 
 
 ## Content status
 
-Confirmed from the organizer's announcement: 3 April 2027, SUPERGROOVE 2.0, workshop with Toby from Badaue Paris.
+Confirmed from the organizer's announcement: 3 April 2027, SUPERGROOVE 2.0, workshop with Toby „Tamandua“ Russell from Badauê Paris.
+
+Ronald's corrections apply to every route and to both calendar files: Toby is named in full as Toby „Tamandua“ Russell, Badauê is spelled with ê, Ronald plays the Repi (repinique), and image descriptions speak of a drum rather than a surdo. The flyer and its animation still read „Badaue · Paris“ because the artwork itself is unchanged.
 
 Venue, event times, workshop registration and line-up are intentionally marked as pending. Nothing has been carried over from the 2026 flyer. There is no booking form or payment collection.
 
@@ -76,6 +78,6 @@ Event artwork, the Rio illustration and the animation supplied for this project;
 
 Version three adds a custom Brazilian coastal illustration, green/lime/coral/pink palette, animated festival details, a community story, Toby and Ronald, and the supplied 98.6-second film in a native modal player. It includes global motion pause, reduced-motion support, mobile navigation, calendar download and native invitation sharing with a clipboard fallback. The full H.264/AAC film is loaded only after a play action; the short flyer animation plays muted only while visible. Fonts and media are local. No charity partner or donation arrangement is claimed.
 
-The concurrent publication of version two at `/` is preserved. `/draft-one/` contains byte-identical original files from `6c9996b`, including its original metadata. The archive has its own assets so later changes cannot alter it.
+The concurrent publication of version two at `/` is preserved. `/draft-one/` contains the original files from `6c9996b`, including its original metadata, with only Ronald's text corrections applied. The archive has its own assets so later changes cannot alter it.
 
 Structural, asset, JavaScript, calendar, archive-integrity and media checks pass. Visual browser QA was unavailable in the editing environment. See `docs/art-direction.md` for the illustration brief.
