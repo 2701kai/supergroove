@@ -20,7 +20,7 @@ class Page(HTMLParser):
             self.ids.append(attrs["id"])
         if "href" in attrs:
             self.links.append(attrs["href"])
-        for key in ("src", "poster"):
+        for key in ("src", "poster", "data-src"):
             if key in attrs:
                 self.assets.append(attrs[key])
         if "srcset" in attrs:
@@ -42,7 +42,8 @@ def check_page(directory):
         if link.startswith("#"):
             assert link == "#" or link[1:] in page.ids, f"{name}: missing anchor {link}"
         elif not re.match(r"[a-z]+:", link):
-            assert resolve(directory, link).is_file(), f"{name}: missing asset {link}"
+            target = resolve(directory, link)
+            assert target.is_file() or (target / "index.html").is_file(), f"{name}: missing asset {link}"
     css = (directory / "styles.css").read_text()
     for match in re.findall(r'''url\(\s*(?:"([^"]*)"|'([^']*)'|([^)]*))\)''', css):
         asset = next(part for part in match if part)
@@ -75,6 +76,8 @@ versions = [directory for directory in sorted(root.iterdir()) if (directory / "i
 counts = {"/" + directory.relative_to(root).as_posix().strip("."): check_page(directory)
           for directory in (root, *versions)}
 for version in versions:
+    if version.name == "draft-one":
+        continue  # Exact historical snapshot, including original metadata.
     assert NOINDEX in (version / "index.html").read_text(), f"/{version.name} should stay out of search results; / is the indexed page"
 root_files = {name: (root / name).read_text() for name in PAGE_FILES}
 live = [version.name for version in versions if as_root_page(version) == root_files]
