@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#fbedd3">
+  <title>SUPERGROOVE 2.0 · Ronald Reloaded · Festa de Samba · 03.04.2027</title>
+  <meta name="description" content="Ronald Reloaded! SUPERGROOVE geht am 3. April 2027 in die zweite Runde: Festa de Samba, Workshop mit Toby von Badaue Paris und ganz viel Herz. Save the date!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="SUPERGROOVE 2.0 · Ronald Reloaded">
+  <meta property="og:description" content="03.04.2027 · Festa de Samba · Workshop mit Toby von Badaue Paris. Mehr Groove. Mehr Bum. Mehr Herz.">
+  <meta property="og:image" content="https://supergroove.vercel.app/assets/supergroove-flyer.jpg">
+  <meta property="og:image:alt" content="SUPERGROOVE 2.0: Ronald mit Schlägel und Surdo, umgeben von brasilianischem Grün, Gelb und Korall.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/groove-display.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/four/styles.css">
+  <script src="/four/app.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="bract-fill" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f2b544"/><stop offset=".45" stop-color="#e2532b"/><stop offset="1" stop-color="#b8321d"/>
+      </linearGradient>
+    </defs>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 1.5 14 9l7-3-4.5 6 4.5 6-7-3-2 7.5-2-7.5-7 3 4.5-6L3 6l7 3z"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-8.5-5.2-8.5-11.2A4.8 4.8 0 0 1 12 7a4.8 4.8 0 0 1 8.5 2.8C20.5 15.8 12 21 12 21z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="heliconia" viewBox="0 0 120 320">
+      <path d="M62 318C61 240 58 160 60 18" fill="none" stroke="#1d4a2c" stroke-width="6" stroke-linecap="round"/>
+      <path d="M62 300C22 282 2 244 8 204c32 20 50 58 54 96z" fill="#2c6b3f"/>
+      <path d="M60 250c-22 0-46-14-56-44 20 12 40 16 56 24z" fill="url(#bract-fill)"/>
+      <path d="M62 200c22 0 46-14 56-44-20 12-40 16-56 24z" fill="url(#bract-fill)"/>
+      <path d="M60 150c-18 0-38-12-46-36 16 10 32 13 46 20z" fill="url(#bract-fill)"/>
+      <path d="M62 105c16 0 34-11 41-33-14 9-28 12-41 18z" fill="url(#bract-fill)"/>
+      <path d="M60 65c-12 0-24-8-29-24 10 7 20 9 29 13z" fill="url(#bract-fill)"/>
+      <path d="M61 30c-6-8-7-18-3-26 4 8 6 16 3 26z" fill="#e2532b"/>
+    </symbol>
+    <symbol id="banana-leaf" viewBox="0 0 300 92">
+      <path d="M2 46C70 2 220-4 298 42 220 84 70 94 2 46z" fill="#2c6b3f"/>
+      <path d="M2 46C100 40 200 40 298 42" fill="none" stroke="#1d4a2c" stroke-width="3"/>
+      <path d="M60 30l10 14m40-24 8 22m42-24 4 24m44-20-2 22m44-14-6 18M70 64l8-18m40 30 4-28m44 30-2-28m42 24-6-22" fill="none" stroke="#fbedd3" stroke-opacity=".35" stroke-width="2"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#inhalt">Direkt zum Inhalt</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <canvas class="spark-canvas" id="spark-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SUPERGROOVE 2.0, zum Seitenanfang">SUPERGROOVE<span>2.0</span></a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#herz">Herz</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#batucada">Mittrommeln</a>
+    </nav>
+    <a class="nav-date" href="#save-the-date" data-magnet>03.04.2027<svg aria-hidden="true"><use href="#arrow"/></svg></a>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-sky" aria-hidden="true">
+        <canvas class="grainient" id="grainient"></canvas>
+        <div class="hero-sun"></div>
+        <svg class="hero-leaf hero-leaf-a"><use href="#banana-leaf"/></svg>
+        <svg class="hero-leaf hero-leaf-b"><use href="#banana-leaf"/></svg>
+        <svg class="hero-heliconia hero-heliconia-a"><use href="#heliconia"/></svg>
+        <svg class="hero-heliconia hero-heliconia-b"><use href="#heliconia"/></svg>
+        <svg class="hero-hills" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice">
+          <path fill="#a9cdb8" d="M0 210c80-30 140-70 210-66s110 40 190 32 120-70 200-74 130 46 210 50 120-40 190-40 140 34 210 30 130-30 230-10v148H0z"/>
+          <path fill="#5fa596" d="M0 240c90-24 170-56 260-46s140 40 230 30 170-48 250-38 120 30 190 26c60-4 92-74 130-124 26-34 70-36 92-6 30 40 46 100 66 150 50 4 110-6 222-8v96H0z"/>
+          <path fill="#2c6b3f" d="M0 262c120-30 260-44 400-30s280 22 420 10 300-30 620 0v38H0z"/>
+          <path fill="#2f8f8a" d="M0 268c240-8 480-10 720-6s480 6 720 0v18H0z"/>
+        </svg>
+      </div>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow shiny"><svg class="spin-star" aria-hidden="true"><use href="#star"/></svg> RON PRESENTS <span class="eyebrow-rule"></span> DIE ZWEITE RUNDE</p>
+          <h1 id="hero-title" class="title">
+            <span class="sr-only">SUPERGROOVE 2.0</span>
+            <span class="title-line title-super" aria-hidden="true"><span class="char" style="--i:0">S</span><span class="char" style="--i:1">U</span><span class="char" style="--i:2">P</span><span class="char" style="--i:3">E</span><span class="char" style="--i:4">R</span><b class="edition">2.0</b></span>
+            <span class="title-line title-groove" aria-hidden="true"><span class="char" style="--i:5">G</span><span class="char" style="--i:6">R</span><span class="char" style="--i:7">O</span><span class="char" style="--i:8">O</span><span class="char" style="--i:9">V</span><span class="char" style="--i:10">E</span></span>
+          </h1>
+          <p class="ribbon">RONALD RELOADED<svg aria-hidden="true"><use href="#arrow"/></svg></p>
+          <p class="hero-tagline"><span class="sr-only">Mehr Groove. Mehr Bum. Mehr Herz. Mehr Alegria.</span><span aria-hidden="true">Mehr <span class="rotating" id="rotating" data-words="Groove.|Bum.|Herz.|Alegria."><span class="rotating-word">Groove.</span></span></span></p>
+          <p class="hero-description">Samba ist Lebensfreude, die man teilt. Am <strong>3. April 2027</strong> holen wir Brasilien zu uns: mit Ronald an der Surdo, Trommeln, Tanz und einem Workshop mit <strong>Toby von Badaue Paris</strong>.</p>
+          <div class="hero-actions">
+            <a class="star-border" href="/supergroove-2027.ics" download data-magnet><span class="star-inner">TERMIN VORMERKEN<svg aria-hidden="true"><use href="#arrow"/></svg></span></a>
+            <a class="button-outline" href="#batucada" data-magnet>MITTROMMELN<span class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
+          </div>
+          <p class="calendar-note">Ganztägiger Kalendereintrag · Uhrzeiten und Location folgen</p>
+        </div>
+
+        <div class="hero-media">
+          <svg class="circular-text" id="circular-text" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circle-path" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs>
+            <circle cx="100" cy="100" r="98"/>
+            <g class="circular-ring"><text><textPath href="#circle-path" textLength="477" lengthAdjust="spacing">FESTA DE SAMBA · 03.04.2027 · ALEGRIA ·</textPath></text></g>
+            <use href="#star" x="74" y="74" width="52" height="52"/>
+          </svg>
+          <figure class="tilt-card" id="tilt-card">
+            <div class="tilt-inner">
+              <picture>
+                <source srcset="/assets/supergroove-flyer.webp" type="image/webp">
+                <img src="/assets/supergroove-flyer.jpg" width="1055" height="1491" alt="Der SUPERGROOVE-2.0-Flyer: Ronald schaut dich an und hält den Schlägel in die Kamera, vor ihm die Surdo. Festa de Samba am 03.04.2027, Workshop mit Toby von Badaue Paris." fetchpriority="high">
+              </picture>
+              <span class="tilt-glare" aria-hidden="true"></span>
+            </div>
+            <figcaption class="tilt-caption" id="tilt-caption" aria-hidden="true">Ronald Reloaded</figcaption>
+          </figure>
+          <span class="date-sticker" aria-hidden="true">SA<br>03.04.<small>2027</small></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="curved-loop" aria-hidden="true">
+      <svg id="curved-loop" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMid slice">
+        <path id="curve-path" d="M-160 150Q20 70 200 150T560 150T920 150T1280 150T1640 150" fill="none"/>
+        <text class="curve-measure" id="curve-measure" x="0" y="-100">FESTA DE SAMBA • ALEGRIA • 03.04.2027 • RONALD RELOADED • MAIS AMOR • </text>
+        <text class="curve-text"><textPath href="#curve-path" id="curve-textpath">FESTA DE SAMBA • ALEGRIA • 03.04.2027 • RONALD RELOADED • MAIS AMOR • </textPath></text>
+      </svg>
+    </div>
+
+    <section class="brasil section-pad" id="brasil" aria-labelledby="brasil-title">
+      <div class="wrap brasil-grid">
+        <div class="brasil-copy">
+          <p class="eyebrow"><svg class="spin-star" aria-hidden="true"><use href="#star"/></svg> BRASIL NO CORAÇÃO</p>
+          <h2 id="brasil-title" data-blur>Ein Stück Brasilien. <span class="accent">Mitten unter uns.</span></h2>
+          <p data-reveal>Grün wie der Regenwald, golden wie die Sonne über Rio, türkis wie die Bucht. Und ein Rhythmus, der alle verbindet.</p>
+        </div>
+        <figure class="brasil-art" data-reveal>
+          <div class="brasil-frame" id="brasil-frame">
+            <picture>
+              <source media="(max-width: 700px)" srcset="/assets/brasil-illustration-768.webp" type="image/webp">
+              <source srcset="/assets/brasil-illustration.webp" type="image/webp">
+              <img src="/assets/brasil-illustration.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustration von Rio de Janeiro: Musikerinnen und Musiker trommeln und tanzen zwischen Heliconien und Palmen, dahinter die Bucht mit Booten und der Zuckerhut im Abendlicht.">
+            </picture>
+          </div>
+          <figcaption>Rio, wie wir es lieben: Zuckerhut, Bucht, Trommeln und Tanz.</figcaption>
+        </figure>
+      </div>
+      <svg class="brasil-heliconia" aria-hidden="true"><use href="#heliconia"/></svg>
+    </section>
+
+    <section class="herz section-pad" id="herz" aria-labelledby="herz-title">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal><svg class="beat-heart" aria-hidden="true"><use href="#heart"/></svg> O CORAÇÃO DO SUPERGROOVE</p>
+        <h2 id="herz-title" class="statement">Samba ist kein Konzert, bei dem man zuschaut. Samba ist ein Kreis, in dem jede Hand zählt. <em>Freude, die größer wird, wenn man sie teilt.</em></h2>
+
+        <div class="values">
+          <article class="value value-forest spotlight" data-reveal>
+            <svg class="value-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 7"/><circle cx="32" cy="10" r="6"/><circle cx="51" cy="21" r="6"/><circle cx="51" cy="43" r="6"/><circle cx="32" cy="54" r="6"/><circle cx="13" cy="43" r="6"/><circle cx="13" cy="21" r="6"/></svg>
+            <h3>Für alle offen</h3>
+            <p>Ob du zum ersten Mal trommelst oder seit Jahren dabei bist: Wer mitklatscht, mittanzt oder mittrommelt, gehört dazu.</p>
+          </article>
+          <article class="value value-ochre spotlight" data-reveal>
+            <svg class="value-icon" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="40" rx="24" ry="9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 40v8c0 5 11 9 24 9s24-4 24-9v-8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 6l12 28M46 6 34 34" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><circle cx="17" cy="5" r="4.5"/><circle cx="47" cy="5" r="4.5"/></svg>
+            <h3>Gemeinsam lernen</h3>
+            <p>Rhythmus wird weitergegeben, von Hand zu Hand. Genau dafür kommt Toby aus Paris.</p>
+          </article>
+          <article class="value value-heliconia spotlight" data-reveal>
+            <svg class="value-icon beat-heart" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg>
+            <h3>Groove, der Gutes tut</h3>
+            <p>SUPERGROOVE kommt von Herzen. Wie unser Groove 2027 auch anderen hilft, erfährst du hier, sobald alles feststeht.</p>
+          </article>
+          <figure class="value value-bay spotlight" data-reveal>
+            <blockquote lang="pt-BR">„Quem não gosta de samba, bom sujeito não é.“</blockquote>
+            <figcaption><span>Wer Samba nicht mag, kann kein guter Kerl sein. Augenzwinkern inklusive.</span><cite>Dorival Caymmi, „Samba da Minha Terra“</cite></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="velocity" aria-hidden="true">
+      <div class="velocity-row velocity-sun" data-velocity="70"><div class="velocity-track"><span>MEHR GROOVE • MEHR BUM • MEHR HERZ • </span><span>MEHR GROOVE • MEHR BUM • MEHR HERZ • </span><span>MEHR GROOVE • MEHR BUM • MEHR HERZ • </span><span>MEHR GROOVE • MEHR BUM • MEHR HERZ • </span></div></div>
+      <div class="velocity-row velocity-jungle" data-velocity="-70"><div class="velocity-track"><span>SAMBA NO PÉ • MUITO AXÉ • ALEGRIA • </span><span>SAMBA NO PÉ • MUITO AXÉ • ALEGRIA • </span><span>SAMBA NO PÉ • MUITO AXÉ • ALEGRIA • </span><span>SAMBA NO PÉ • MUITO AXÉ • ALEGRIA • </span></div></div>
+    </div>
+
+    <section class="workshop section-pad" id="workshop" aria-labelledby="workshop-title">
+      <div class="wrap workshop-grid">
+        <div class="workshop-title-area">
+          <p class="eyebrow"><span aria-hidden="true">↘</span> DAS ERSTE HIGHLIGHT</p>
+          <h2 id="workshop-title" data-blur>WORKSHOP MIT <span class="accent">TOBY.</span></h2>
+          <svg class="route" viewBox="0 0 520 170" aria-hidden="true">
+            <path id="route-path" class="route-line" d="M40 128C140 20 360 6 478 112" fill="none"/>
+            <g class="route-stop"><circle cx="40" cy="128" r="9"/><text x="22" y="160">PARIS</text></g>
+            <g class="route-stop route-stop-end"><circle cx="478" cy="112" r="9"/><text x="500" y="146" text-anchor="end">SUPERGROOVE</text></g>
+            <g class="route-traveller"><circle r="13"/><use href="#heart" x="-8" y="-8" width="16" height="16"/>
+              <animateMotion dur="5s" repeatCount="indefinite" rotate="0" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .25 1"><mpath href="#route-path"/></animateMotion>
+            </g>
+          </svg>
+        </div>
+        <div class="workshop-copy" data-reveal>
+          <span class="small-label">BADAUE · PARIS <span aria-hidden="true">↗</span> SUPERGROOVE</span>
+          <h3>Paris schickt<br>den Groove.</h3>
+          <p>Toby von Badaue Paris kommt zum Workshop. Ein guter Grund, sich den 3. April schon jetzt freizuhalten.</p>
+          <div class="workshop-details"><span class="outline-dot" aria-hidden="true"></span><p>Uhrzeit, Ablauf und Anmeldung werden noch bekannt gegeben. Alle Infos findest du dann hier.</p></div>
+          <a class="text-link" href="#save-the-date">Erst mal den Termin sichern <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="batucada section-pad" id="batucada" aria-labelledby="batucada-title">
+      <div class="wrap">
+        <div class="batucada-head">
+          <p class="eyebrow"><span class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span> BATUCADA · SPIEL MIT</p>
+          <h2 id="batucada-title" data-blur>Vier Trommeln. <span class="accent">Ein Herzschlag.</span></h2>
+          <p data-reveal>Tipp auf die Instrumente oder drück die Tasten 1 bis 4. Oder lass die ganze Bateria loslegen: Ronald trommelt mit.</p>
+        </div>
+        <div class="batucada-grid">
+          <figure class="ronald-card" data-reveal>
+            <video id="ronald-video" loop muted playsinline preload="none" poster="/assets/ronald-eyes-open.webp" aria-label="Ronald an der Surdo. Das Video läuft stumm mit, solange die Bateria spielt.">
+              <source src="/assets/ronald-reloaded.mp4" type="video/mp4">
+            </video>
+            <figcaption><span class="live-dot" aria-hidden="true"></span> RONALD TROMMELT MIT</figcaption>
+          </figure>
+          <div class="batucada-play">
+            <div class="pads">
+              <button class="pad pad-surdo" type="button" data-voice="surdo" data-key="1" data-magnet aria-label="Surdo spielen, Taste 1"><span class="pad-head" aria-hidden="true"></span><span class="pad-name">Surdo</span><span class="pad-role">Der Herzschlag</span><kbd>1</kbd></button>
+              <button class="pad pad-caixa" type="button" data-voice="caixa" data-key="2" data-magnet aria-label="Caixa spielen, Taste 2"><span class="pad-head" aria-hidden="true"></span><span class="pad-name">Caixa</span><span class="pad-role">Das Feuer</span><kbd>2</kbd></button>
+              <button class="pad pad-tamborim" type="button" data-voice="tamborim" data-key="3" data-magnet aria-label="Tamborim spielen, Taste 3"><span class="pad-head" aria-hidden="true"></span><span class="pad-name">Tamborim</span><span class="pad-role">Der Funke</span><kbd>3</kbd></button>
+              <button class="pad pad-agogo" type="button" data-voice="agogo" data-key="4" data-magnet aria-label="Agogô spielen, Taste 4"><span class="pad-head" aria-hidden="true"></span><span class="pad-name">Agogô</span><span class="pad-role">Das Lachen</span><kbd>4</kbd></button>
+            </div>
+            <div class="bateria">
+              <button class="star-border" id="groove-toggle" type="button" aria-pressed="false"><span class="star-inner"><span id="groove-label">BATERIA STARTEN</span><svg id="groove-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></svg></span></button>
+              <div class="elastic" id="elastic">
+                <label for="tempo">Tempo</label>
+                <span class="elastic-icon" aria-hidden="true">−</span>
+                <div class="elastic-track"><input type="range" id="tempo" min="88" max="132" step="2" value="104" aria-valuetext="104 Schläge pro Minute"></div>
+                <span class="elastic-icon" aria-hidden="true">+</span>
+                <output id="tempo-value" for="tempo">104 BPM</output>
+              </div>
+              <div class="steps" id="steps" aria-hidden="true"></div>
+              <p class="bateria-note">Die Klänge entstehen live in deinem Browser. Kein Download, kein Tracking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="date-section section-pad" id="save-the-date" aria-labelledby="date-title">
+      <div class="wrap date-grid">
+        <div class="date-display">
+          <p class="eyebrow">DEIN DATE MIT DEM GROOVE</p>
+          <h2 id="date-title"><time datetime="2027-04-03"><span>03.04.</span><span>2027<svg class="date-star spin-star" aria-hidden="true"><use href="#star"/></svg></span></time></h2>
+          <p class="weekday">SAMSTAG</p>
+          <div class="countdown" role="timer" aria-label="Countdown bis zum 3. April 2027">
+            <p class="sr-only" id="cd-text"></p>
+            <div aria-hidden="true"><span class="counter" id="cd-days"></span><span class="unit">TAGE</span></div>
+            <div aria-hidden="true"><span class="counter" id="cd-hours"></span><span class="unit">STUNDEN</span></div>
+            <div aria-hidden="true"><span class="counter" id="cd-minutes"></span><span class="unit">MINUTEN</span></div>
+            <div aria-hidden="true"><span class="counter" id="cd-seconds"></span><span class="unit">SEKUNDEN</span></div>
+          </div>
+          <p class="countdown-status" id="countdown-status">bis zum 3. April 2027</p>
+        </div>
+        <div class="date-card" data-reveal>
+          <h3>Steht im Kalender.<br>Bleibt im Kopf.</h3>
+          <p>Der Termin steht. Die weiteren Veranstaltungsdetails kommen dazu, sobald sie feststehen.</p>
+          <dl class="event-facts">
+            <div><dt>LOCATION</dt><dd>Wird bekannt gegeben</dd></div>
+            <div><dt>UHRZEITEN</dt><dd>Folgen</dd></div>
+            <div><dt>LINE-UP</dt><dd>In Planung</dd></div>
+            <div><dt>WORKSHOP</dt><dd>Toby · Badaue Paris</dd></div>
+          </dl>
+          <a class="star-border" href="/supergroove-2027.ics" download data-magnet><span class="star-inner">AB IN DEN KALENDER<svg aria-hidden="true"><use href="#arrow"/></svg></span></a>
+          <p class="calendar-note">Ganztägiger Platzhalter. Kein fester Veranstaltungsbeginn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-section section-pad" aria-labelledby="share-title">
+      <div class="wrap share-grid">
+        <div>
+          <p class="eyebrow">GUTE LAUNE IST ANSTECKEND</p>
+          <h2 id="share-title" data-blur>WEITER&shy;SAGEN.</h2>
+          <p data-reveal>Für die Leute, mit denen du am liebsten Krach machst.</p>
+          <div class="share-actions">
+            <button class="star-border" id="share-flyer" type="button" data-magnet><span class="star-inner">FLYER TEILEN<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 16V3M7 8l5-5 5 5M5 13v7h14v-7"/></svg></span></button>
+            <a class="download-link" href="/assets/supergroove-flyer.jpg" download="SUPERGROOVE-2.0-Flyer.jpg">Flyer als Bild herunterladen <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="stack-area">
+          <div class="stack" id="stack">
+            <div class="stack-card stack-ticket"><p class="ticket-kicker">SAVE THE DATE</p><p class="ticket-date">SA<br>03.04.<br>2027</p><p class="ticket-line">FESTA DE SAMBA · WORKSHOP MIT TOBY</p><p class="ticket-small">Location, Uhrzeiten und Line-up folgen</p></div>
+            <figure class="stack-card"><img src="/assets/brasil-illustration-768.webp" width="768" height="512" loading="lazy" decoding="async" alt="Die Rio-Illustration mit Trommeln, Tanz und Zuckerhut."></figure>
+            <figure class="stack-card"><img src="/assets/supergroove-flyer.webp" width="1055" height="1491" loading="lazy" decoding="async" alt="Der SUPERGROOVE-2.0-Flyer."></figure>
+          </div>
+          <button class="stack-next" id="stack-next" type="button">Nächstes Bild <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="stack-hint" aria-hidden="true">Zieh die Karten zur Seite</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top">SUPERGROOVE<span>2.0</span></a>
+      <p>POWERED BY RON. GETRAGEN VOM GROOVE. GEMACHT MIT HERZ.</p>
+      <a href="#top" class="back-top">NACH OBEN <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <div class="wrap footer-note">Save-the-Date-Seite · Veranstaltungsdetails folgen.</div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
