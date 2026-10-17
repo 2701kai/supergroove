@@ -23,21 +23,45 @@ class Page(HTMLParser):
         for key in ("src", "poster"):
             if key in attrs:
                 self.assets.append(attrs[key])
+        if "srcset" in attrs:
+            self.assets.extend(part.split()[0] for part in attrs["srcset"].split(","))
 
 
-page = Page()
-page.feed((root / "index.html").read_text())
-assert len(page.ids) == len(set(page.ids)), "Duplicate HTML IDs"
-for link in page.links + page.assets:
-    if link.startswith("#"):
-        assert link == "#" or link[1:] in page.ids, f"Missing anchor: {link}"
-    elif not re.match(r"[a-z]+:", link):
-        assert (root / link.split("?")[0]).is_file(), f"Missing asset: {link}"
-css = (root / "styles.css").read_text()
-for match in re.findall(r'''url\(\s*(?:"([^"]*)"|'([^']*)'|([^)]*))\)''', css):
-    asset = next(part for part in match if part)
-    if not asset.startswith("data:"):
-        assert (root / asset).is_file(), f"Missing CSS asset: {asset}"
+def resolve(base, link):
+    """Root-relative links start at dist/, everything else at the referencing file."""
+    path = link.split("?")[0].split("#")[0]
+    return root / path.lstrip("/") if path.startswith("/") else base / path
+
+
+def check_page(directory):
+    page = Page()
+    page.feed((directory / "index.html").read_text())
+    name = "/" + directory.relative_to(root).as_posix().strip(".")
+    assert len(page.ids) == len(set(page.ids)), f"{name}: duplicate HTML IDs"
+    for link in page.links + page.assets:
+        if link.startswith("#"):
+            assert link == "#" or link[1:] in page.ids, f"{name}: missing anchor {link}"
+        elif not re.match(r"[a-z]+:", link):
+            assert resolve(directory, link).is_file(), f"{name}: missing asset {link}"
+    css = (directory / "styles.css").read_text()
+    for match in re.findall(r'''url\(\s*(?:"([^"]*)"|'([^']*)'|([^)]*))\)''', css):
+        asset = next(part for part in match if part)
+        if not asset.startswith("data:"):
+            assert resolve(directory, asset).is_file(), f"{name}: missing CSS asset {asset}"
+    js = (directory / "app.js").read_text()
+    for selector in re.findall(r"querySelector\(['\"]#([^'\"]+)", js):
+        assert selector in page.ids, f"{name}: unknown JavaScript target {selector}"
+    for asset in re.findall(r"['\"]((?:/|assets/)[^'\"]+\.\w+)['\"]", js):
+        assert resolve(directory, asset).is_file(), f"{name}: missing JavaScript asset {asset}"
+    assert not re.search(r"https?://", js), f"{name}: unexpected external script service"
+    return len(page.ids)
+
+
+counts = {"/" + directory.relative_to(root).as_posix().strip("."): check_page(directory)
+          for directory in (root, root / "one", root / "two")}
+for version in ("one", "two"):
+    html = (root / version / "index.html").read_text()
+    assert '<meta name="robots" content="noindex">' in html, f"/{version} should stay out of search results; / is the indexed page"
 
 raw = (root / "supergroove-2027.ics").read_bytes()
 assert b"\r\n" in raw and not re.search(rb"(?<!\r)\n", raw), "Calendar needs CRLF"
@@ -51,8 +75,5 @@ assert start_date.weekday() == 5, "Event should be a Saturday"
 assert "TRANSP:TRANSPARENT" in calendar, "Save-the-date should not block the entire day"
 assert "Location folgen" in calendar and "Uhrzeiten" in calendar
 
-js = (root / "app.js").read_text()
-for selector in re.findall(r"querySelector\(['\"]#([^'\"]+)", js):
-    assert selector in page.ids, f"Unknown JavaScript target: {selector}"
-assert not re.search(r"https?://", js), "Unexpected external script service"
-print(f"PASS: {len(page.ids)} unique IDs, local assets, navigation, JS targets, calendar dates and folding.")
+summary = ", ".join(f"{name} ({count} IDs)" for name, count in counts.items())
+print(f"PASS: {summary}; local assets, navigation, JS targets, calendar dates and folding.")
