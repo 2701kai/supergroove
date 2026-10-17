@@ -11,7 +11,9 @@ The complete, dependency-free website is in `dist/`. Each version is self-contai
 | `/` | `dist/` | Live page, currently version two |
 | `/one` | `dist/one/` | Version one: the first save-the-date page |
 | `/two` | `dist/two/` | Version two: the 2027 redesign |
+| `/three` | `dist/three/` | Illustrated Brazil direction: Ein Rhythmus. Viele Herzen. |
 | `/four` | `dist/four/` | Version four: draft in the colours of the Rio illustration, with React Bits-style effects |
+| `/draft-one/` | `dist/draft-one/` | Exact original snapshot, with independent assets |
 
 The version folders use root-relative paths (`/assets/...`, `/two/styles.css`), so they render the same with or without a trailing slash, and they carry `noindex` so search engines only list `/`. To put a version live, copy its three files into `dist/`, switch the paths back to relative ones (`assets/...`, `styles.css`, `app.js`, `supergroove-2027.ics`) and remove the `noindex` line.
 
@@ -63,3 +65,11 @@ Production: https://supergroove.vercel.app (Vercel project `supergroove`, servin
 ## Assets
 
 Event artwork, the Rio illustration and the animation supplied for this project; `ronald-eyes-open.webp` is the animation's first frame. The effects in version four are modelled on React Bits (reactbits.dev, MIT + Commons Clause) and written from scratch in plain JavaScript. Nimbus Sans fonts are from URW Base35, distributed under the GNU AGPL v3 with the font embedding exception. See `dist/assets/FONT-LICENSE.txt`.
+
+## Illustrated direction, version three
+
+Version three adds a custom Brazilian coastal illustration, green/lime/coral/pink palette, animated festival details, a community story, Toby and Ronald, and the supplied 98.6-second film in a native modal player. It includes global motion pause, reduced-motion support, mobile navigation, calendar download and native invitation sharing with a clipboard fallback. The full H.264/AAC film is loaded only after a play action; the short flyer animation plays muted only while visible. Fonts and media are local. No charity partner or donation arrangement is claimed.
+
+The concurrent publication of version two at `/` is preserved. `/draft-one/` contains byte-identical original files from `6c9996b`, including its original metadata. The archive has its own assets so later changes cannot alter it.
+
+Structural, asset, JavaScript, calendar, archive-integrity and media checks pass. Visual browser QA was unavailable in the editing environment. See `docs/art-direction.md` for the illustration brief.
